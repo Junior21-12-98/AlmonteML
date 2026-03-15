@@ -319,10 +319,12 @@ nav ul li a:hover {
 .service-card video {
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px;
     margin-bottom: 15px;
     display: block;
+    background: linear-gradient(135deg, #202a2d 0%, #36444a 100%);
+    padding: 4px;
 }
 
 .service-card h3 {
