@@ -83,11 +83,9 @@ document.addEventListener("DOMContentLoaded", () => {
             hamburger.setAttribute('aria-expanded', 'false');
 
             requestAnimationFrame(() => {
-                const header = document.querySelector('header');
-                const headerOffset = header ? header.offsetHeight + 8 : 8;
-                const targetTop = targetSection.getBoundingClientRect().top + window.scrollY;
-                const scrollTarget = Math.max(targetTop - headerOffset, 0);
-                window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+                requestAnimationFrame(() => {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
             });
         });
     });
@@ -108,13 +106,13 @@ document.addEventListener("DOMContentLoaded", () => {
             'nav.contact': 'CONTACT',
             'home.title': 'Transforming Spaces, <br> Creating Dreams',
             'home.cta': 'Get a Free Quote',
-            'about.title': 'About Almote Modern Living',
-            'about.p1': 'At Almote Modern Living, we believe that your home should be a reflection of your unique style and personality. With over 5 years of experience in the remodeling industry, our dedicated team is committed to transforming your dreams into reality.',
+            'about.title': 'About Almonte Modern Living',
+            'about.p1': 'At Almonte Modern Living, we believe that your home should be a reflection of your unique style and personality. With over 10 years of experience in the remodeling industry, our dedicated team is committed to transforming your dreams into reality.',
             'about.p2': 'We specialize in a wide range of remodeling services, including kitchen and bathroom renovations, home additions, and interior design. Our goal is to create functional, beautiful spaces that enhance your lifestyle while adding value to your home.',
             'about.p3': 'We pride ourselves on our attention to detail, quality craftsmanship, and exceptional customer service. Every project we undertake is treated with the utmost care and professionalism. From the initial consultation to the final touches, we work closely with our clients to ensure their vision is realized.',
-            'about.p4': 'Join us on this journey to create the space of your dreams. Let Almote Modern Living bring your vision to life!',
+            'about.p4': 'Join us on this journey to create the space of your dreams. Let Almonte Modern Living bring your vision to life!',
             'services.title': 'Our Services',
-            'services.subtitle': 'At Almote Modern Living, we offer a variety of remodeling services to transform your home. Here are some of our key offerings:',
+            'services.subtitle': 'At Almonte Modern Living, we offer a variety of remodeling services to transform your home. Here are some of our key offerings:',
             'services.kitchen.title': 'Kitchen Remodeling',
             'services.kitchen.desc': 'Transform your kitchen into a modern and functional space. We specialize in custom cabinetry, countertops, and layouts.',
             'services.bathroom.title': 'Bathroom Remodeling',
@@ -133,15 +131,17 @@ document.addEventListener("DOMContentLoaded", () => {
             'contact.form.submit': 'Send Message',
             'contact.info.title': 'Contact Information',
             'contact.info.phoneLabel': 'Phone:',
-            'contact.info.phone': '(123) 456-7890',
+            'contact.info.phone': '(347) 634-5288',
             'contact.info.emailLabel': 'Email:',
-            'contact.info.email': 'info@almotemodernliving.com',
+            'contact.info.email': 'info@almontemodernliving.com',
             'contact.info.addressLabel': 'Address:',
-            'contact.info.address': '123 Dream St, City, State 12345',
-            'contact.info.hoursLabel': 'Hours:',
-            'contact.info.hours': 'Mon-Fri 9am-6pm',
+            'contact.info.address': 'New York',
+            'contact.info.areaLabel': 'Service Area:',
+            'contact.info.area': 'Serving all 5 NYC Boroughs',
+            'contact.info.responseLabel': 'Response Time:'
+            'contact.info.response': 'We respond within 24 hours',
             'footer.rights': 'All Rights Reserved.',
-            'footer.text': '© 2026 Almote Modern Living. All Rights Reserved.',
+            'footer.text': '© 2026 Almonte Modern Living. All Rights Reserved.',
             'contact.alert': 'Thank you for your message! We will get back to you soon.',
             'contact.error': 'There was an error sending your message. Please try again.'
         },
@@ -153,13 +153,13 @@ document.addEventListener("DOMContentLoaded", () => {
             'nav.contact': 'CONTACTO',
             'home.title': 'Transformando Espacios, <br> Creando Sueños',
             'home.cta': 'Solicita una Cotización',
-            'about.title': 'Acerca de Almote Modern Living',
-            'about.p1': 'En Almote Modern Living, creemos que tu hogar debe ser un reflejo de tu estilo único y personalidad. Con más de 5 años de experiencia en la industria de remodelación, nuestro equipo dedicado está comprometido a transformar tus sueños en realidad.',
+            'about.title': 'Acerca de Almonte Modern Living',
+            'about.p1': 'En Almonte Modern Living, creemos que tu hogar debe ser un reflejo de tu estilo único y personalidad. Con más de 10 años de experiencia en la industria de remodelación, nuestro equipo dedicado está comprometido a transformar tus sueños en realidad.',
             'about.p2': 'Nos especializamos en una amplia gama de servicios de remodelación, incluyendo renovaciones de cocina y baño, ampliaciones del hogar y diseño de interiores. Nuestro objetivo es crear espacios funcionales y hermosos que mejoren tu estilo de vida mientras aumentan el valor de tu hogar.',
             'about.p3': 'Nos enorgullece nuestra atención al detalle, mano de obra de calidad y servicio al cliente excepcional. Cada proyecto que emprendemos se trata con el máximo cuidado y profesionalismo. Desde la consulta inicial hasta los toques finales, trabajamos en estrecha colaboración con nuestros clientes para asegurar que su visión se haga realidad.',
-            'about.p4': '¡Acompáñanos en este viaje para crear el espacio de tus sueños. Deja que Almote Modern Living haga realidad tu visión!',
+            'about.p4': '¡Acompáñanos en este viaje para crear el espacio de tus sueños. Deja que Almonte Modern Living haga realidad tu visión!',
             'services.title': 'Nuestros Servicios',
-            'services.subtitle': 'En Almote Modern Living, ofrecemos una variedad de servicios de remodelación para transformar tu hogar. Aquí están algunas de nuestras ofertas principales:',
+            'services.subtitle': 'En Almonte Modern Living, ofrecemos una variedad de servicios de remodelación para transformar tu hogar. Aquí están algunas de nuestras ofertas principales:',
             'services.kitchen.title': 'Remodelación de Cocina',
             'services.kitchen.desc': 'Transforma tu cocina en un espacio moderno y funcional. Nos especializamos en gabinetes personalizados, encimeras y diseños.',
             'services.bathroom.title': 'Remodelación de Baño',
@@ -178,15 +178,17 @@ document.addEventListener("DOMContentLoaded", () => {
             'contact.form.submit': 'Enviar Mensaje',
             'contact.info.title': 'Información de Contacto',
             'contact.info.phoneLabel': 'Teléfono:',
-            'contact.info.phone': '(123) 456-7890',
+            'contact.info.phone': '(347) 634-5288',
             'contact.info.emailLabel': 'Correo:',
-            'contact.info.email': 'info@almotemodernliving.com',
+            'contact.info.email': 'info@almontemodernliving.com',
             'contact.info.addressLabel': 'Dirección:',
-            'contact.info.address': '123 Dream St, City, State 12345',
-            'contact.info.hoursLabel': 'Horario:',
-            'contact.info.hours': 'Lun-Vie 9am-6pm',
+            'contact.info.address': 'New York',
+            'contact.info.areaLabel': 'Área de Servicio:',
+            'contact.info.area': 'Cubrimos los 5 condados de NYC',
+            'contact.info.responseLabel': 'Tiempo de Respuesta:',
+            'contact.info.response': 'Respondemos en menos de 24 horas',
             'footer.rights': 'Todos los derechos reservados.',
-            'footer.text': '© 2026 Almote Modern Living. Todos los derechos reservados.',
+            'footer.text': '© 2026 Almonte Modern Living. Todos los derechos reservados.',
             'contact.alert': '¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.',
             'contact.error': 'Hubo un error al enviar tu mensaje. Intenta nuevamente.'
         }
