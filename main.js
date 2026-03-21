@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
             'contact.info.address': 'New York',
             'contact.info.areaLabel': 'Service Area:',
             'contact.info.area': 'Serving all 5 NYC Boroughs',
-            'contact.info.responseLabel': 'Response Time:'
+            'contact.info.responseLabel': 'Response Time:',
             'contact.info.response': 'We respond within 24 hours',
             'footer.rights': 'All Rights Reserved.',
             'footer.text': '© 2026 Almonte Modern Living. All Rights Reserved.',

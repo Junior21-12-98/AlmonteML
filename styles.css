@@ -751,7 +751,7 @@ footer {
 
 .contact-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
     padding: clamp(10px, 2vw, 14px) clamp(12px, 3vw, 18px);
     background: #f6fbf9;
@@ -764,11 +764,21 @@ footer {
     width: 42px;
     height: 42px;
     background: #4C7766;
+    border: 2px solid #3a5a4a;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
+    box-shadow: 0 4px 10px rgba(76, 119, 102, 0.28);
+    margin-top: 2px;
+}
+
+.contact-icon svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    stroke: #ffffff;
 }
 
 .contact-detail {
@@ -789,7 +799,7 @@ footer {
 .contact-value {
     font-size: clamp(0.85rem, 1.6vw, 1rem);
     color: #2c3e50;
-    font-weight: 500;
+    font-weight: 600;
     word-break: break-word;
 }
 
@@ -938,6 +948,20 @@ footer {
     #contact {
         gap: 20px;
         padding: 32px 0;
+    }
+
+    .contact-row {
+        gap: 12px;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contact-icon svg {
+        width: 18px;
+        height: 18px;
     }
 
     .contact-form-inner {
