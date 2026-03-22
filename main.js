@@ -6,10 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxImg = document.getElementById("lightbox-img");
     const caption = document.getElementById("caption");
     const closeBtn = document.querySelector(".close");
+    const isMobileView = () => window.matchMedia("(max-width: 768px)").matches;
 
     // Open lightbox on image click
     gallerySlides.forEach((slide) => {
         slide.addEventListener("click", (e) => {
+            if (isMobileView()) {
+                return;
+            }
+
             lightbox.style.display = "flex"; 
             lightboxImg.src = e.target.src; 
             caption.innerText = "";
@@ -22,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const prevBtn = carousel.querySelector('.carousel-btn[data-direction="prev"]');
         const nextBtn = carousel.querySelector('.carousel-btn[data-direction="next"]');
         let currentIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         const showSlide = (index) => {
             slides.forEach((slide, idx) => {
@@ -39,6 +46,28 @@ document.addEventListener("DOMContentLoaded", () => {
             const nextIndex = (currentIndex + 1) % slides.length;
             showSlide(nextIndex);
         });
+
+        carousel.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].clientX;
+        }, { passive: true });
+
+        carousel.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].clientX;
+            const deltaX = touchEndX - touchStartX;
+
+            if (Math.abs(deltaX) < 35) {
+                return;
+            }
+
+            if (deltaX < 0) {
+                const nextIndex = (currentIndex + 1) % slides.length;
+                showSlide(nextIndex);
+                return;
+            }
+
+            const nextIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showSlide(nextIndex);
+        }, { passive: true });
     });
 
     // Close lightbox when clicking on the close button

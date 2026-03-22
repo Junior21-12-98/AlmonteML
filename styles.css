@@ -384,6 +384,7 @@ nav ul li a:hover {
     position: relative;
     width: 100%;
     aspect-ratio: 3 / 2;
+    touch-action: pan-y;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
@@ -396,6 +397,7 @@ nav ul li a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    touch-action: pan-y;
     opacity: 0;
     z-index: 0;
     pointer-events: none;
@@ -961,14 +963,20 @@ footer {
     }
 
     .gallery-card {
-        width: 90%;
-        max-width: 360px;
+        width: min(94vw, 380px);
+        max-width: 380px;
+    }
+
+    .gallery-carousel {
+        aspect-ratio: 4 / 3;
+        border-radius: 12px;
     }
 
     .carousel-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 18px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        background: rgba(0, 0, 0, 0.58);
     }
 
     #contact {
