@@ -150,6 +150,13 @@ nav ul li a:hover {
     justify-content: center;
 }
 
+#about,
+#services,
+#gallery,
+#contact {
+    scroll-margin-top: 104px;
+}
+
 .home-img {
     position: absolute;
     top: 0;
@@ -246,6 +253,7 @@ nav ul li a:hover {
     color: #4C7766;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 700;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
@@ -275,6 +283,7 @@ nav ul li a:hover {
     color: #4C7766;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 700;
+    margin-top: 5px;
     margin-bottom: 20px;
 }
 
@@ -356,6 +365,7 @@ nav ul li a:hover {
     color: #4C7766;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 700;
+    margin-top: 5px;
     margin-bottom: 40px;
 }
 
@@ -387,12 +397,16 @@ nav ul li a:hover {
     height: 100%;
     object-fit: cover;
     opacity: 0;
+    z-index: 0;
+    pointer-events: none;
     transition: opacity 0.35s ease;
     cursor: pointer;
 }
 
 .gallery-slide.active {
     opacity: 1;
+    z-index: 1;
+    pointer-events: auto;
 }
 
 .carousel-btn {
@@ -429,8 +443,10 @@ nav ul li a:hover {
 .lightbox {
     display: none;
     position: fixed;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 12px;
     z-index: 1000;
     left: 0;
     top: 0;
@@ -445,6 +461,15 @@ nav ul li a:hover {
     max-height: 90%;
     border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#caption {
+    display: none;
+    max-width: min(90vw, 900px);
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
 }
 
 .close {
@@ -560,6 +585,7 @@ footer {
 #contact h1 {
     color: #4C7766;
     font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-top: 5px;
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -899,7 +925,7 @@ footer {
     #services,
     #gallery,
     #contact {
-        scroll-margin-top: 116px;
+        scroll-margin-top: 44px;
     }
 
     #home {

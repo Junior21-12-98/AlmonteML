@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         slide.addEventListener("click", (e) => {
             lightbox.style.display = "flex"; 
             lightboxImg.src = e.target.src; 
-            caption.innerText = e.target.alt;
+            caption.innerText = "";
         });
     });
 
@@ -84,6 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
+                    if (targetId === 'home') {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        return;
+                    }
+
                     targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 });
             });
@@ -117,10 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
             'services.kitchen.desc': 'Transform your kitchen into a modern and functional space. We specialize in custom cabinetry, countertops, and layouts.',
             'services.bathroom.title': 'Bathroom Remodeling',
             'services.bathroom.desc': 'Revamp your bathroom with stylish fixtures, beautiful tiles, and efficient layouts to create a spa-like retreat.',
-            'services.interior.title': 'Interior Design',
-            'services.interior.desc': 'Our interior design services focus on creating beautiful and functional spaces tailored to your style and needs.',
-            'services.garden.title': 'Garden Design',
-            'services.garden.desc': 'Transform your backyard with professional garden design services, creating vibrant and lush landscapes.',
+            'services.interior.title': 'Stairs Remodeling & Construction',
+            'services.interior.desc': 'Upgrade your home with custom stair remodeling and construction, built for safety, durability, and a refined finish.',
+            'services.garden.title': 'Patio & Deck Remodeling',
+            'services.garden.desc': 'Upgrade your outdoor space with professional patio and deck remodeling, built for style, durability, and comfort.',
             'gallery.title': 'Gallery',
             'contact.title': 'Contact Us',
             'contact.subtitle': 'Get in touch for a free consultation!',
@@ -164,10 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
             'services.kitchen.desc': 'Transforma tu cocina en un espacio moderno y funcional. Nos especializamos en gabinetes personalizados, encimeras y diseños.',
             'services.bathroom.title': 'Remodelación de Baño',
             'services.bathroom.desc': 'Renueva tu baño con accesorios elegantes, azulejos hermosos y diseños eficientes para crear un retiro estilo spa.',
-            'services.interior.title': 'Diseño de Interiores',
-            'services.interior.desc': 'Nuestros servicios de diseño de interiores se centran en crear espacios hermosos y funcionales adaptados a tu estilo y necesidades.',
-            'services.garden.title': 'Diseño de Jardines',
-            'services.garden.desc': 'Transforma tu patio trasero con servicios profesionales de diseño de jardines, creando paisajes vibrantes y exuberantes.',
+            'services.interior.title': 'Remodelación y Construcción de Escaleras',
+            'services.interior.desc': 'Mejora tu hogar con remodelación y construcción personalizada de escaleras, diseñada para seguridad, durabilidad y un acabado elegante.',
+            'services.garden.title': 'Remodelación de Patio y Deck',
+            'services.garden.desc': 'Renueva tu espacio exterior con remodelación profesional de patio y deck, diseñada para estilo, durabilidad y comodidad.',
             'gallery.title': 'Galería',
             'contact.title': 'Contáctanos',
             'contact.subtitle': '¡Ponte en contacto para una consulta gratuita!',
