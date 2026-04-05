@@ -981,6 +981,14 @@ footer {
     color: #2c3e50;
     font-weight: 600;
     word-break: break-word;
+    display: block;
+}
+a.contact-value {
+    color: #4C7766;
+    text-decoration: none;
+}
+a.contact-value:hover {
+    text-decoration: underline;
 }
 
 .contact-summary {
